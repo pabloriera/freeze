@@ -6,7 +6,7 @@ https://www.mail-archive.com/music-dsp@music.columbia.edu/msg05845.html
 
 * FFT
 * Reeverb
-··* All pass Schroeder 
+⋅⋅* Unordered sub-list. 
 * Granular
 ··* Use of Cross-correlation to avoid interference
 
