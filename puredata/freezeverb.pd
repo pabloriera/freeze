@@ -1,0 +1,90 @@
+#N canvas 535 90 607 638 10;
+#X obj 26 536 freeverb~;
+#X obj 121 500 readsf~ 2;
+#X msg 111 433 open \$1;
+#X obj 111 414 openpanel;
+#X msg 203 383 \; pd dsp 1;
+#X obj 111 381 bng 30 250 50 0 empty empty open 1 15 1 12 -4080 -1
+-228;
+#X obj 111 452 t b a;
+#X msg 98 476 1;
+#X msg 25 42 roomsize \$1;
+#X msg 25 87 damping \$1;
+#X msg 25 131 width \$1;
+#X msg 25 175 wet \$1;
+#X msg 25 219 dry \$1;
+#X msg 59 242 print;
+#X msg 79 291 freeze \$1;
+#X msg 82 335 bypass \$1;
+#X obj 82 316 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 79 272 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 154 274 - start and stop "freeze" mode (off by default). If
+on \, reverb tail gets freezed (sample and hold).;
+#X obj 37 196 hsl 60 18 0 1 0 1 empty empty dry 2 9 1 12 -225271 -1
+-1 0 0;
+#X obj 37 152 hsl 60 18 0 1 0 1 empty empty wet 2 9 1 12 -225271 -1
+-1 5900 0;
+#X obj 37 108 hsl 60 18 0 1 0 1 empty empty width 2 9 1 12 -262131
+-1 -1 5900 0;
+#X obj 37 64 hsl 60 18 0 2 0 1 empty empty damping 2 9 1 12 -261689
+-1 -1 100 0;
+#X obj 37 19 hsl 60 18 0.11 1.1 0 1 empty empty roomsize 2 9 1 12 -261689
+-1 -1 5300 0;
+#X text 117 18 - size of the room to be simulated. Larger values result
+in longer reverb. Values above 1 will result in feedback or 'room resonance'
+(i.e. reverb getting louder);
+#X floatatom 7 23 3 0 0 0 - - -, f 3;
+#X text 116 110 - stereo width of the reverb \, i.e. how much of the
+reverb part from the left and right channel mix. Turning this to 1
+(nearly gives two separate mono reverbs.;
+#X text 115 152 - level of the wet (reverbed) signal \, between 0 and
+1;
+#X text 113 197 - level of the dry (i.e. unprocessed or original) signal
+\, between 0 and 1 Note that wet and dry signals mix and thus can cause
+clipping if both are set at high levels.;
+#X text 115 242 - print the current values of these parameters.;
+#X text 157 305 - bypass reverb processing when set to 1 Can be used
+to compare reverbed signal with original signal \, and to save CPU
+when reverb is not needed.;
+#X floatatom 7 68 3 0 0 0 - - -, f 3;
+#X floatatom 7 113 3 0 0 0 - - -, f 3;
+#X floatatom 7 156 3 0 0 0 - - -, f 3;
+#X floatatom 7 200 3 0 0 0 - - -, f 3;
+#X text 114 65 - amount of damping of the room's surfaces. <=1 means
+nearly no damping \, resulting in a lot of reflection (long reverb)
+\, >1 means high damping of signals (short reverb).;
+#X msg 169 431 open ../wavs/Reich_Music18.wav;
+#X obj 27 570 pddp/ezoutput~;
+#X connect 0 0 37 0;
+#X connect 0 1 37 1;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 6 1 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 0;
+#X connect 19 0 12 0;
+#X connect 19 0 34 0;
+#X connect 20 0 11 0;
+#X connect 20 0 33 0;
+#X connect 21 0 10 0;
+#X connect 21 0 32 0;
+#X connect 22 0 9 0;
+#X connect 22 0 31 0;
+#X connect 23 0 8 0;
+#X connect 23 0 25 0;
+#X connect 36 0 6 0;
