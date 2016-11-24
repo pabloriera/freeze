@@ -20,3 +20,4 @@ Requeriments
 - Pure Data
 - Python 
 - librosa
+- pyo
