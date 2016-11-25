@@ -35,5 +35,5 @@ Requirements
 
 - Pure Data
 - Python 
-- librosa
-- pyo
+  * librosa
+  * pyo
