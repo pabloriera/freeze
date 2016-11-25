@@ -1,9 +1,25 @@
 # Audio freeze effect
 
-Thread on MUSIC - DSP
+## Plugins
+
+* GrainFreeze http://www.kvraudio.com/product/grainfreeze_by_oli_larkin/details
+
+![](http://static.kvraudio.com/i/b/grainfreeze.gif)
+
+* GRM Freeze http://www.inagrm.com/freeze
+
+![](http://www.inagrm.com/sites/default/files/u4/Freeze2.jpg)
+
+* Electro Harmonic 
+
+![](http://thumbs.ebaystatic.com/images/g/F8oAAOSwUuFWw92s/s-l200.jpg)
+
+* Live 
+
+![](http://www.kentsandvik.com/Blog/wp-content/uploads/2007/03/simpler_580x204.jpg)
+
+## Thread on MUSIC - DSP
 https://www.mail-archive.com/music-dsp@music.columbia.edu/msg05845.html
-
-
 
 * FFT / Phase vocoder
 * Reeverb
