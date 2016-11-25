@@ -1,0 +1,25 @@
+#N canvas 593 244 269 375 10;
+#X obj 15 111 hradio 10 1 0 3 empty empty empty 2 -5 0 8 -204800 -1
+-1 2;
+#X obj 13 329 outlet;
+#X obj 14 347 cnv 5 25 5 empty OUTLET_CANVAS OUT -1 12 0 10 -1 -1 0
+;
+#X obj 150 222 pipe 200;
+#X obj 13 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 14 111 cnv 12 34 13 empty \$0_open_file OPEN 3 7 0 10 -1 -262144
+0;
+#X obj 15 134 s \$0_button_pressed;
+#X obj 13 189 r \$0_button_pressed;
+#X obj 63 283 s \$0_open_file;
+#X msg 148 247 color 22 0 0;
+#X msg 63 247 color 11 0 0;
+#X connect 0 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 0;
+#X connect 7 0 10 0;
+#X connect 7 0 3 0;
+#X connect 7 0 4 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 36 15 2 13 110;

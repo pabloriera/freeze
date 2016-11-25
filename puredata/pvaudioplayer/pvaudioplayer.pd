@@ -1,0 +1,119 @@
+#N struct 1007-template float x float y float q array poswave 1007-array-element
+array negwave 1007-array-element;
+#N struct 1007-array-element float y;
+#N canvas 104 336 725 467 10;
+#X declare -path mmb/;
+#X declare -lib iem_tab;
+#X obj -84 -60 soundfiler;
+#X obj -84 -24 nbx 10 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 7.59053e+06 256;
+#X obj -84 15 bang;
+#X obj -84 -149 openpanel;
+#X msg -84 78 normalize 1;
+#X msg 137 53 size 403 45;
+#X msg 137 33 bgcolor 12;
+#X msg 137 73 wavecolor 5 5 5;
+#X obj 137 0 bang;
+#X obj 137 -74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 101 open_button;
+#X obj 137 -51 loadbang;
+#X msg -84 -94 read -resize -maxsize 8.82e+08 \$1 \$2;
+#X obj 261 2 table \$1;
+#X obj -84 113 s \$1;
+#X obj -40 0 s \$1_nsamples;
+#X obj -1 -62 print;
+#X obj -84 -123 pack s s;
+#X obj -22 -121 symbol \$1;
+#X obj 1 -142 loadbang;
+#X obj -84 50 del 10;
+#X obj 137 -24 del 10;
+#X obj 138 147 hsl 401 15 0 172121 0 0 \$1_location \$1_location-set
+empty -2 -8 0 10 -66577 -162280 -1 22947 1;
+#X obj -76 219 phase_vocoder \$1;
+#X obj -76 244 outlet~;
+#X obj 262 -130 r \$1_nsamples;
+#X msg 262 -56 range 0 \$1;
+#X obj 357 -109 samplerate~;
+#X obj 357 -135 loadbang;
+#X obj 355 -155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 262 -88 expr 1000*$f1/$f2;
+#X obj 59 211 s \$1_speed;
+#X obj 109 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 109 144 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 59 190 100;
+#X obj 130 192 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 130 211 s \$1_rewind;
+#X obj 91 166 t b b;
+#X obj 212 250 >;
+#X obj 343 -56 s \$1_length_ms;
+#X obj 255 255 r \$1_length_ms;
+#X obj 212 280 sel 1;
+#X obj 212 231 nbx 5 14 0 172121 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 98741 256;
+#X obj 260 282 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 172121 256;
+#X obj 212 166 r \$1_location-set;
+#X obj 212 207 t b a;
+#X obj 117 267 spigot;
+#X obj 469 75 declare -path mmb/;
+#X obj 136 101 waveform.mmb \$1;
+#X obj 262 -32 s \$1_location-set;
+#X obj 468 -83 r \$1_pos;
+#X obj 468 -58 *;
+#X obj 468 -33 s \$1_location-set;
+#X obj 32 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 15 0;
+#X connect 2 0 20 0;
+#X connect 2 0 48 0;
+#X connect 3 0 17 0;
+#X connect 4 0 14 0;
+#X connect 5 0 48 0;
+#X connect 6 0 48 0;
+#X connect 7 0 48 0;
+#X connect 8 0 7 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 10 0 3 0;
+#X connect 11 0 21 0;
+#X connect 12 0 0 0;
+#X connect 12 0 16 0;
+#X connect 17 0 12 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 0;
+#X connect 20 0 4 0;
+#X connect 21 0 8 0;
+#X connect 23 0 24 0;
+#X connect 25 0 30 0;
+#X connect 26 0 49 0;
+#X connect 27 0 30 1;
+#X connect 28 0 27 0;
+#X connect 30 0 26 0;
+#X connect 30 0 39 0;
+#X connect 30 0 51 1;
+#X connect 32 0 37 0;
+#X connect 33 0 46 1;
+#X connect 34 0 31 0;
+#X connect 35 0 36 0;
+#X connect 37 0 34 0;
+#X connect 37 1 35 0;
+#X connect 38 0 41 0;
+#X connect 40 0 38 1;
+#X connect 40 0 43 0;
+#X connect 41 0 46 0;
+#X connect 42 0 38 0;
+#X connect 44 0 45 0;
+#X connect 45 0 42 0;
+#X connect 45 1 42 0;
+#X connect 46 0 32 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 53 0 1 0;
+#X coords 0 -1 1 1 441 62 2 100 100;

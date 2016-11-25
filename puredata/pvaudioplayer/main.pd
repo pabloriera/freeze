@@ -1,0 +1,36 @@
+#N struct 1007-template float x float y float q array poswave 1007-array-element
+array negwave 1007-array-element;
+#N struct 1007-array-element float y;
+#N canvas 786 414 1100 217 10;
+#X declare -path mmb/;
+#X declare -lib iem_tab;
+#X obj 111 120 pddp/ezoutput~;
+#X obj 692 16 notein;
+#X obj 692 42 stripnote;
+#X floatatom 692 67 3 0 0 0 - - -;
+#X obj 691 151 s ONE_pos;
+#X obj 112 36 pvaudioplayer ONE;
+#X obj 774 156 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.389764 256;
+#X obj 875 41 ctlin 78;
+#X obj 875 64 / 127;
+#X obj 783 64 / 127;
+#X obj 783 41 ctlin 79;
+#X obj 691 90 expr (($f1-48)/(96-48)-0.5)*$f2*3 + $f3;
+#X obj 961 42 ctlin 80;
+#X obj 961 91 s ONE_speed;
+#X obj 961 65 expr $f1/127*200;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 7 0 8 0;
+#X connect 8 0 11 2;
+#X connect 9 0 11 1;
+#X connect 10 0 9 0;
+#X connect 11 0 4 0;
+#X connect 11 0 6 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
